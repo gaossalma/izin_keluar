@@ -7,7 +7,7 @@
 <!-- Nama Santri Field -->
 <div class="form-group">
     {!! Form::label('nama_santri', 'Nama Santri:') !!}
-    <p>{!! $izinPulang->nama_santri !!}</p>
+    <p>{!! $izinPulang->santri_nama->nama !!}</p>
 </div>
 
 <!-- Tgl Pulang Field -->

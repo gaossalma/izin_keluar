@@ -11,6 +11,7 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use PDF;
+use App\Models\IzinPulang;
 
 class IzinPulangController extends AppBaseController
 {
@@ -154,30 +155,25 @@ class IzinPulangController extends AppBaseController
         return redirect(route('izinPulangs.index'));
     }
 
-    // public function make($id)
-    // {
+    public function pdf($id)
+    {
+        // $izinPulang = $this->izinPulangRepository->findWithoutFail($id);
 
-    //     $izinPulang = $this->izinPulangRepository->findWithoutFail($id);
+        // if (empty($izinPulang)) {
+        //     Flash::error('Izin Pulang not found');
 
-    //     if ($id_izinPulang = $request->get('id')) {
-    //         $izinPulang->where('id_izinPulang', $id_izinPulang);
-    //     }
+        //     return redirect(route('izinPulangs.index'));
+        // }
+
+        // return view('izin_pulangs.invoices')->with('izinPulang', $izinPulang);
+        // $idSantri = IzinPulang::where('id','=',$id)->get('nama_santri');
+        $data = IzinPulang::where('id','=',$id)->get();
+        // $detail_santri=DataSantri::where('id','=',$idSantri)->get();
         
+        // $pdf = PDF::loadView();
+        // $pdf->loadHTML('<h1>Test</h1>');
+        return view('izin_pulangs.invoices',compact('data'));
+        // 
 
-    //     // if (empty($izinPulang)) {
-    //     //     Flash::error('Izin Pulang not found');
-
-    //     //     return redirect(route('izinPulangs.index'));
-    //     // }
-
-    //     return view('izin_pulangs.invoices')->with('izinPulang', $izinPulang);
-        
-    //     // $this->izinPulangRepository->pushCriteria(new RequestCriteria($request));
-    //     // $izinPulangs = $this->izinPulangRepository->all();
-
-    //     // return view('izin_pulangs.invoices')
-    //     //     ->with('izinPulangs', $izinPulangs);
-    //     // $pdf = PDF::loadView('izin_pulangs.invoices')->with('izinPulangs', $izinPulangs);
-    //     // return $pdf->stream();
-    // }
+    }
 }

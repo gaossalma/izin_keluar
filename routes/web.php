@@ -34,9 +34,6 @@ Route::resource('keperluans', 'KeperluanController');
 
 Route::resource('izinPulangs', 'IzinPulangController');
 
-Route::get('pdf/{id}','IzinPulangController@make' );
+Route::get('pdf/{id}','IzinPulangController@pdf' );
 
-Route::get('suratizin','PrintController@index');
-
-Route::get('/prnpriview','PrintController@prnpriview');
 

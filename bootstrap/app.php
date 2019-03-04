@@ -15,6 +15,7 @@ $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );
 
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
@@ -40,10 +41,10 @@ $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
     App\Exceptions\Handler::class
 );
-
-//costum
-// 
+//Print PDF
 // $app->register(\Barryvdh\DomPDF\ServiceProvider::class);
+
+// $app->configure('dompdf');
 
 /*
 |--------------------------------------------------------------------------
